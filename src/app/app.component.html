@@ -1,0 +1,16 @@
+<div class="container p-4 text-center">
+  <div class="row border-1 shadow customGap p-5 d-flex align-items-center justify-content-center">
+    <h1>{{title}}</h1>
+    <div class="row newTasks customGap d-flex align-items-center justify-content-center ">
+      <input class="form-control taskControl" type="text" placeholder="Enter New Task" #task>
+      <button class="btn btn-primary" (click)="addTask(task.value)">New Task</button>
+    </div>
+    <div class="tasksDisplay text-start">
+      <ul class="list-group list-unstyled py-3" *ngFor="let item of list" >
+        <li class="px-4 d-flex align-items-center justify-content-between">
+          {{item.name}} <button class="mx-3 btn py-0 btn-danger" (click)="removeTask(item.id)">X</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
